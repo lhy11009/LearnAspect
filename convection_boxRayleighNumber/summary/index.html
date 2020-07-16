@@ -128,6 +128,35 @@
     </ul>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">convection_boxAdaptiveRefinement</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../convection_boxAdaptiveRefinement/summary/">Summary</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">convection_boxIGR3RF1.000e+00</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../convection_boxAdaptiveRefinement/convection_boxIGR3RF1.000e%2B00/summary/">Summary</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../convection_boxAdaptiveRefinement/convection_boxIGR3RF1.000e%2B00/case.prm">Parameters</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">convection_boxIGR3RF8.000e-01</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../convection_boxAdaptiveRefinement/convection_boxIGR3RF8.000e-01/summary/">Summary</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../convection_boxAdaptiveRefinement/convection_boxIGR3RF8.000e-01/case.prm">Parameters</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">convection_boxIGR3RF6.000e-01</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../convection_boxAdaptiveRefinement/convection_boxIGR3RF6.000e-01/summary/">Summary</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../convection_boxAdaptiveRefinement/convection_boxIGR3RF6.000e-01/case.prm">Parameters</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
       </div>
     </div>
     </nav>
@@ -171,6 +200,26 @@
 <p>initial_global_refinement: [4]</p>
 <h3 id="the-group-is-tested-with">The group is tested with:</h3>
 <h3 id="the-group-is-genearated-with-extra-settings">The group is genearated with extra settings:</h3>
+<h1 id="test-different-choice-of-rayleigh-number">Test different choice of rayleigh number</h1>
+<h2 id="fields-result-computational-time-statistic-results">Fields result, computational time, statistic results</h2>
+<ul>
+<li>
+<p>For Ra = 3e2, no apparent convection going on at t = 0.5, 2 steps to t = 0.5
+Heat flux2 = -1.00003298, Heat flux3 = 1.00003298, resemble a pure conduction; RMS Velocity is decreasing in time</p>
+</li>
+<li>
+<p>For Ra = 1e3, no apparent convection going on at t = 0.5, about 8 steps to t = 0.5
+Heat flux2 = -1.00927632, Heat flux3 = 1.00927632; RMS is increasing so that this case is developing towards a convection</p>
+</li>
+<li>
+<p>For Ra = 1e4, apparent convection going on at t = 0.5, about 1000 steps to t = 0.5
+Heat flux2 = -4.88459731, Heat flux3 = 4.88459731, RMS Velocity = 42.8656928</p>
+</li>
+<li>
+<p>For Ra = 1e5, apparent convection going on at t = 0.5, about 6000 steps to t = 0.5
+Heat flux2 = -10.4951125, Heat flux3 = 10.4951125, RMS Velocity = 193.087843</p>
+</li>
+</ul>
               
             </div>
           </div>
