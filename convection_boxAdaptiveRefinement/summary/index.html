@@ -200,6 +200,34 @@
 <p>refinement_fraction: [0.6, 0.8, 1.0]</p>
 <h3 id="the-group-is-tested-with">The group is tested with:</h3>
 <h3 id="the-group-is-genearated-with-extra-settings">The group is genearated with extra settings:</h3>
+<h1 id="test-adaptive-refinement-and-different-choice-of-refinement-fraction">test adaptive refinement and different choice of 'refinement fraction'</h1>
+<h2 id="number-of-cells-computational-time-statistic-results">Number of cells, computational time, statistic results</h2>
+<ul>
+<li>For Refinement fraction = 1.0, there are 4^2 = 64 cells to start with. 
+After t = 0.2 there are 256 cells.
+After t = 0.3 there are 1024 cells.
+After t = 0.4 there are 4096 cells.
+It takes 1744 steps to reach t = 0.5
+Heat flux2 = -4.88441046, Heat flux3 = 4.88441046, RMS Velocity = 42.8649456</li>
+</ul>
+<p>compare to the results we have in group Group convection_boxGlobalRefinement, this is better than Global refinement = 4, but with more time steps(1744 &gt; 1000)</p>
+<ul>
+<li>For Refinement fraction = 0.8, there are 4^2 = 64 cells to start with. 
+After t = 0.2 there are 148 cells.
+After t = 0.3 there are 394 cells.
+After t = 0.4 there are 1060 cells.
+It takes 1678 steps to reach t = 0.5
+Heat flux2 = -4.88466479, Heat flux3 = 4.88466479, RMS Velocity = 42.8660622</li>
+</ul>
+<p>this is a litter worse than Global refinement = 4.</p>
+<ul>
+<li>For Refinement fraction = 0.6, there are 4^2 = 64 cells to start with. 
+After t = 0.2 there are 112 cells.
+After t = 0.3 there are 238 cells.
+After t = 0.4 there are 514 cells.
+It takes 1594 steps to reach t = 0.5
+Heat flux2 = -4.88556725, Heat flux3 = 4.88556725, RMS Velocity = 42.8655231</li>
+</ul>
               
             </div>
           </div>
