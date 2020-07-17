@@ -215,6 +215,35 @@
     </ul>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">convection_boxMinimuxRefinementFunc2</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../convection_boxMinimuxRefinementFunc2/summary/">Summary</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">convection_boxIAR2IGR3MRFB2MRFC0RF6.000e-01</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../convection_boxMinimuxRefinementFunc2/convection_boxIAR2IGR3MRFB2MRFC0RF6.000e-01/summary/">Summary</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../convection_boxMinimuxRefinementFunc2/convection_boxIAR2IGR3MRFB2MRFC0RF6.000e-01/case.prm">Parameters</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">convection_boxIAR2IGR3MRFB2MRFC0RF1.000e+00</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../convection_boxMinimuxRefinementFunc2/convection_boxIAR2IGR3MRFB2MRFC0RF1.000e%2B00/summary/">Summary</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../convection_boxMinimuxRefinementFunc2/convection_boxIAR2IGR3MRFB2MRFC0RF1.000e%2B00/case.prm">Parameters</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">convection_boxIAR2IGR3MRFB2MRFC0RF8.000e-01</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../convection_boxMinimuxRefinementFunc2/convection_boxIAR2IGR3MRFB2MRFC0RF8.000e-01/summary/">Summary</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../convection_boxMinimuxRefinementFunc2/convection_boxIAR2IGR3MRFB2MRFC0RF8.000e-01/case.prm">Parameters</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
       </div>
     </div>
     </nav>
@@ -261,6 +290,15 @@
 <p>refinement_fraction: [0.6, 0.8, 1.0]</p>
 <h3 id="the-group-is-tested-with">The group is tested with:</h3>
 <h3 id="the-group-is-genearated-with-extra-settings">The group is genearated with extra settings:</h3>
+<h1 id="test-initial-adaptive-refinememnt">test initial adaptive refinememnt</h1>
+<p>For all the three cases in this group, the number of cells are always 64.</p>
+<p>It seems that this is related with this setting</p>
+<pre><code>set Time steps between mesh refinement = 0
+</code></pre>
+<p>because in the user mannual, it says:</p>
+<pre><code>If 0 then the mesh will never be changed
+</code></pre>
+<p>for this parameter</p>
               
             </div>
           </div>
