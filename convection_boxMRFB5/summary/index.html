@@ -206,11 +206,28 @@
 <p>minimum_refinement_function_boundary: 5</p>
 <h3 id="the-case-is-tested-with">The case is tested with:</h3>
 <h3 id="the-case-is-genearated-with-extra-settings">The case is genearated with extra settings:</h3>
+<h1 id="test-minimum-refinement-function">test Minimum refinement function</h1>
+<h2 id="number-of-cells-computational-time-statistic-results">Number of cells, computational time, statistic results</h2>
+<ul>
+<li>For:
+    set Function constants = Xmin=0.2, Xmax=0.8, Ymin=0.2, Ymax=0.8
+    set Function expression = (((y<Ymin)||(y>Ymax)) ? 5:0)</li>
+</ul>
+<p>there are 592 cells to start with. 
+It takes 1928 steps to reach t = 0.5,
+Heat flux2 = -4.88309928e+00, Heat flux3 = 4.88309929e+00, RMS Velocity = 42.8593022,
+not as good as global refinement = 4</p>
+<h2 id="refinement-with-minimum-function">Refinement with minimum function</h2>
+<p>It seems that this refines the last globmesh t0 refine to the intended value. See the upper and lower boundary, there are 16 puper layer and 16 lower layers that are fined to levlel  5. See case images for detail.</p>
 <h1 id="plots">Plots</h1>
 <h2 id="statisticspng">Statistics.png</h2>
 <p><img alt="Statistics.png" src="../img/Statistics.png" /></p>
 <h2 id="depthaverage_t000000000e00png">DepthAverage_t0.00000000e+00.png</h2>
 <p><img alt="DepthAverage_t0.00000000e+00.png" src="../img/DepthAverage_t0.00000000e%2B00.png" /></p>
+<h2 id="visit0001png">visit0001.png</h2>
+<p><img alt="visit0001.png" src="../img/visit0001.png" /></p>
+<h2 id="visit0000png">visit0000.png</h2>
+<p><img alt="visit0000.png" src="../img/visit0000.png" /></p>
               
             </div>
           </div>
