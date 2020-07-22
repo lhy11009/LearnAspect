@@ -221,6 +221,35 @@
     </ul>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">convection_boxStRfCs</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../convection_boxStRfCs/summary/">Summary</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">convection_boxRF6.000e-01testCRC1</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../convection_boxStRfCs/convection_boxRF6.000e-01testCRC1/summary/">Summary</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../convection_boxStRfCs/convection_boxRF6.000e-01testCRC1/case.prm">Parameters</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">convection_boxRF8.000e-01testCRC1</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../convection_boxStRfCs/convection_boxRF8.000e-01testCRC1/summary/">Summary</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../convection_boxStRfCs/convection_boxRF8.000e-01testCRC1/case.prm">Parameters</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">convection_boxRF4.000e-01testCRC1</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../convection_boxStRfCs/convection_boxRF4.000e-01testCRC1/summary/">Summary</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../convection_boxStRfCs/convection_boxRF4.000e-01testCRC1/case.prm">Parameters</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
       </div>
     </div>
     </nav>
@@ -273,7 +302,8 @@
     set Strategy = temperature
 end
 </code></pre>
-<p>This case goes to refinement level to 5 and doesn't change afterwards.</p>
+<h2 id="this-case-goes-to-refinement-level-to-5-and-doesnt-change-afterwards">This case goes to refinement level to 5 and doesn't change afterwards.</h2>
+<p>In the code, the 'maximum_refinememt_level' is set to the sum of 'Initial global refinement' and 'Initial adaptive refinement' so that we cannot refine to a higher level even in a later time step.</p>
 <h1 id="plots">Plots</h1>
 <h2 id="statisticspng">Statistics.png</h2>
 <p><img alt="Statistics.png" src="../img/Statistics.png" /></p>

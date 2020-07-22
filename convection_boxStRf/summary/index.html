@@ -221,6 +221,35 @@
     </ul>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">convection_boxStRfCs</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../convection_boxStRfCs/summary/">Summary</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">convection_boxRF6.000e-01testCRC1</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../convection_boxStRfCs/convection_boxRF6.000e-01testCRC1/summary/">Summary</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../convection_boxStRfCs/convection_boxRF6.000e-01testCRC1/case.prm">Parameters</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">convection_boxRF8.000e-01testCRC1</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../convection_boxStRfCs/convection_boxRF8.000e-01testCRC1/summary/">Summary</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../convection_boxStRfCs/convection_boxRF8.000e-01testCRC1/case.prm">Parameters</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">convection_boxRF4.000e-01testCRC1</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../convection_boxStRfCs/convection_boxRF4.000e-01testCRC1/summary/">Summary</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../convection_boxStRfCs/convection_boxRF4.000e-01testCRC1/case.prm">Parameters</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
       </div>
     </div>
     </nav>
@@ -264,6 +293,16 @@
 <p>strategy: temperature</p>
 <h3 id="the-group-is-tested-with">The group is tested with:</h3>
 <h3 id="the-group-is-genearated-with-extra-settings">The group is genearated with extra settings:</h3>
+<h1 id="test-refinement-factor">test refinement factor</h1>
+<h2 id="number-of-cells">Number of cells</h2>
+<p>with no coarse factor, the mesh tends to be refined through time. </p>
+<h3 id="causation">causation</h3>
+<p>This has to do with the fact that the error is related with $$d^n$$ which results in larger error in larger cell.</p>
+<h3 id="solution">solution</h3>
+<ul>
+<li>set additional time refinememnt</li>
+<li>set coarsen factor</li>
+</ul>
               
             </div>
           </div>
