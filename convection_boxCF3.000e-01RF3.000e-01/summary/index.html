@@ -19,7 +19,7 @@
   <script>
     // Current page data
     var mkdocs_page_name = "Summary";
-    var mkdocs_page_input_path = "convection_boxMRFB5/summary.md";
+    var mkdocs_page_input_path = "convection_boxCF3.000e-01RF3.000e-01/summary.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -146,22 +146,10 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">convection_boxMRFB5</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Summary</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#the-case-is-configured-with">The case is configured with:</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#the-case-is-tested-with">The case is tested with:</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#the-case-is-genearated-with-extra-settings">The case is genearated with extra settings:</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../convection_boxMRFB5/summary/">Summary</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../case.prm">Parameters</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../convection_boxMRFB5/case.prm">Parameters</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">convection_boxSt</span></p>
@@ -265,10 +253,22 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">convection_boxCF3.000e-01RF3.000e-01</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../convection_boxCF3.000e-01RF3.000e-01/summary/">Summary</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Summary</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#the-case-is-configured-with">The case is configured with:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-case-is-tested-with">The case is tested with:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-case-is-genearated-with-extra-settings">The case is genearated with extra settings:</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../convection_boxCF3.000e-01RF3.000e-01/case.prm">Parameters</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../case.prm">Parameters</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">convection_boxStRfCs1</span></p>
@@ -313,7 +313,7 @@
     
       
         
-          <li>convection_boxMRFB5 &raquo;</li>
+          <li>convection_boxCF3.000e-01RF3.000e-01 &raquo;</li>
         
       
     
@@ -328,32 +328,30 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="case-convection_boxmrfb5">Case convection_boxMRFB5</h1>
+                <h1 id="case-convection_boxcf3000e-01rf3000e-01">Case convection_boxCF3.000e-01RF3.000e-01</h1>
 <h2 id="overview">Overview</h2>
 <h3 id="the-case-is-configured-with">The case is configured with:</h3>
-<p>minimum_refinement_function_boundary: 5</p>
+<p>coarsening_fraction: 0.3</p>
+<p>refinement_fraction: 0.3</p>
 <h3 id="the-case-is-tested-with">The case is tested with:</h3>
 <h3 id="the-case-is-genearated-with-extra-settings">The case is genearated with extra settings:</h3>
-<h1 id="test-minimum-refinement-function">test Minimum refinement function</h1>
-<h2 id="number-of-cells-computational-time-statistic-results">Number of cells, computational time, statistic results</h2>
-<ul>
-<li>For:
-    set Function constants = Xmin=0.2, Xmax=0.8, Ymin=0.2, Ymax=0.8
-    set Function expression = (((y<Ymin)||(y>Ymax)) ? 5:0)</li>
-</ul>
-<p>there are 592 cells to start with. 
-It takes 1928 steps to reach t = 0.5,
-Heat flux2 = -4.88309928e+00, Heat flux3 = 4.88309929e+00, RMS Velocity = 42.8593022,
-not as good as global refinement = 4</p>
-<h2 id="refinement-with-minimum-function">Refinement with minimum function</h2>
-<p>It seems that this refines the last globmesh t0 refine to the intended value. See the upper and lower boundary, there are 16 puper layer and 16 lower layers that are fined to levlel  5. See case images for detail.</p>
+<h1 id="continue-from-the-group-convection_boxstrfcs">continue from the group convection_boxStRfCs</h1>
+<p>try to address the 'mesh not stable issue', using 'refractory factor + coarsening vector &lt; 1.0'</p>
+<h2 id="issue-allieviated">issue allieviated</h2>
+<p>There is only one timestep where mesh changes around t = 0.37</p>
 <h1 id="plots">Plots</h1>
 <h2 id="statisticspng">Statistics.png</h2>
 <p><img alt="Statistics.png" src="../img/Statistics.png" /></p>
 <h2 id="depthaverage_t000000000e00png">DepthAverage_t0.00000000e+00.png</h2>
 <p><img alt="DepthAverage_t0.00000000e+00.png" src="../img/DepthAverage_t0.00000000e%2B00.png" /></p>
+<h2 id="visit0003png">visit0003.png</h2>
+<p><img alt="visit0003.png" src="../img/visit0003.png" /></p>
 <h2 id="visit0001png">visit0001.png</h2>
 <p><img alt="visit0001.png" src="../img/visit0001.png" /></p>
+<h2 id="visit0002png">visit0002.png</h2>
+<p><img alt="visit0002.png" src="../img/visit0002.png" /></p>
+<h2 id="visit0004png">visit0004.png</h2>
+<p><img alt="visit0004.png" src="../img/visit0004.png" /></p>
 <h2 id="visit0000png">visit0000.png</h2>
 <p><img alt="visit0000.png" src="../img/visit0000.png" /></p>
               
@@ -366,7 +364,7 @@ not as good as global refinement = 4</p>
         <a href="../case.prm" class="btn btn-neutral float-right" title="Parameters">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../convection_boxAdaptiveRefinement/convection_boxIGR3RF6.000e-01/case.prm" class="btn btn-neutral" title="Parameters"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../convection_boxRF8.000e-01testART3/case.prm" class="btn btn-neutral" title="Parameters"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -392,7 +390,7 @@ not as good as global refinement = 4</p>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../convection_boxAdaptiveRefinement/convection_boxIGR3RF6.000e-01/case.prm" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../convection_boxRF8.000e-01testART3/case.prm" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../case.prm" style="color: #fcfcfc">Next &raquo;</a></span>
