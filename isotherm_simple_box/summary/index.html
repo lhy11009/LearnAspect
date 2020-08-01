@@ -342,6 +342,13 @@
                     <li class="toctree-l1"><a class="reference internal" href="../case.prm">Parameters</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">isotherm_simple_box_1</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../isotherm_simple_box_1/summary/">Summary</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../isotherm_simple_box_1/case.prm">Parameters</a>
+                    </li>
+                </ul>
       </div>
     </div>
     </nav>
@@ -387,7 +394,20 @@
 <p>Outside the region with T &gt; 600</p>
 <p>T &gt; 600 seems to be, outside of the box with x&lt;330e3, y&lt;330e3, ~150e3 &lt; z &lt; 500e3</p>
 <h2 id="effect-of-the-exclude-composition-unclear">Effect of the 'exclude composition' unclear</h2>
+<h3 id="_1-case">'_1' case</h3>
+<p>We can see the difference with C_2 this time.</p>
+<p>modify the parameter of 'Initial adaptive refinement' to 3</p>
+<p>As Menno put it, this is due to "I figured out that this probably has to do fundementals of how refinement is done, and what priorities are set for the coner cases. In this case, the priority is set for refinment over coarsening".</p>
 <h2 id="effect-of-the-second-isotherm-unclear">Effect of the 'second isotherm' unclear</h2>
+<h1 id="issue-with-the-code">Issue with the code</h1>
+<p>line 71 in iso_therms.cc should be ' in.composition[isotherm_line][exclude_composition]' instead of 'n.composition[i][exclude_composition]' ?</p>
+<h2 id="test-with-changed-version-isotherm_line-i">test with changed version 'isotherm_line' -&gt; 'i'</h2>
+<p>visit.0001png is where I tested this, the result is defferent that, except for a corner, the 2nd composition is not refined.</p>
+<h3 id="_1-case_1">'_1' case</h3>
+<p>visit.0000.png is there I used the original one, and visit.0001.png is where I used the modified one.
+visit.0002.png is after visit.0000.png, where I output the composition C_2</p>
+<h3 id="cause-of-the-problem">Cause of the problem</h3>
+<p>Within a cell, some is marked to be refined versus every points are marked to be refined, maybe.</p>
 <h1 id="plots">Plots</h1>
 <h2 id="visit0001png">visit0001.png</h2>
 <p><img alt="visit0001.png" src="../img/visit0001.png" /></p>

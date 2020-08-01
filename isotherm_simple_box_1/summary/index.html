@@ -19,7 +19,7 @@
   <script>
     // Current page data
     var mkdocs_page_name = "Summary";
-    var mkdocs_page_input_path = "convection_box/summary.md";
+    var mkdocs_page_input_path = "isotherm_simple_box_1/summary.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -52,22 +52,10 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">convection_box</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Summary</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#the-case-is-configured-with">The case is configured with:</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#the-case-is-tested-with">The case is tested with:</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#the-case-is-genearated-with-extra-settings">The case is genearated with extra settings:</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../convection_box/summary/">Summary</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../case.prm">Parameters</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../convection_box/case.prm">Parameters</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">convection_boxGlobalRefinement</span></p>
@@ -343,10 +331,22 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">isotherm_simple_box_1</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../isotherm_simple_box_1/summary/">Summary</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Summary</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#the-case-is-configured-with">The case is configured with:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-case-is-tested-with">The case is tested with:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-case-is-genearated-with-extra-settings">The case is genearated with extra settings:</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../isotherm_simple_box_1/case.prm">Parameters</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../case.prm">Parameters</a>
                     </li>
                 </ul>
       </div>
@@ -370,7 +370,7 @@
     
       
         
-          <li>convection_box &raquo;</li>
+          <li>isotherm_simple_box_1 &raquo;</li>
         
       
     
@@ -385,16 +385,32 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="case-convection_box">Case convection_box</h1>
+                <h1 id="case-isotherm_simple_box_1">Case isotherm_simple_box_1</h1>
 <h2 id="overview">Overview</h2>
 <h3 id="the-case-is-configured-with">The case is configured with:</h3>
 <h3 id="the-case-is-tested-with">The case is tested with:</h3>
 <h3 id="the-case-is-genearated-with-extra-settings">The case is genearated with extra settings:</h3>
+<h1 id="region-that-appears-to-be-refined">Region that appears to be refined</h1>
+<p>Outside the region with T &gt; 600</p>
+<p>T &gt; 600 seems to be, outside of the box with x&lt;330e3, y&lt;330e3, ~150e3 &lt; z &lt; 500e3</p>
+<h2 id="effect-of-the-exclude-composition-unclear">Effect of the 'exclude composition' unclear</h2>
+<h3 id="_1-case">'_1' case</h3>
+<p>We can see the difference with C_2 this time.</p>
+<p>modify the parameter of 'Initial adaptive refinement' to 3</p>
+<p>As Menno put it, this is due to "I figured out that this probably has to do fundementals of how refinement is done, and what priorities are set for the coner cases. In this case, the priority is set for refinment over coarsening".</p>
+<h2 id="effect-of-the-second-isotherm-unclear">Effect of the 'second isotherm' unclear</h2>
+<h1 id="issue-with-the-code">Issue with the code</h1>
+<p>line 71 in iso_therms.cc should be ' in.composition[isotherm_line][exclude_composition]' instead of 'n.composition[i][exclude_composition]' ?</p>
+<h2 id="test-with-changed-version-isotherm_line-i">test with changed version 'isotherm_line' -&gt; 'i'</h2>
+<p>visit.0001png is where I tested this, the result is defferent that, except for a corner, the 2nd composition is not refined.</p>
+<h3 id="_1-case_1">'_1' case</h3>
+<p>visit.0000.png is there I used the original one, and visit.0001.png is where I used the modified one.
+visit.0002.png is after visit.0000.png, where I output the composition C_2</p>
+<h3 id="cause-of-the-problem">Cause of the problem</h3>
+<p>Within a cell, some is marked to be refined versus every points are marked to be refined, maybe.</p>
 <h1 id="plots">Plots</h1>
-<h2 id="statisticspng">Statistics.png</h2>
-<p><img alt="Statistics.png" src="../img/Statistics.png" /></p>
-<h2 id="depthaverage_t000000000e00png">DepthAverage_t0.00000000e+00.png</h2>
-<p><img alt="DepthAverage_t0.00000000e+00.png" src="../img/DepthAverage_t0.00000000e%2B00.png" /></p>
+<h2 id="visit0001png">visit0001.png</h2>
+<p><img alt="visit0001.png" src="../img/visit0001.png" /></p>
 <h2 id="visit0002png">visit0002.png</h2>
 <p><img alt="visit0002.png" src="../img/visit0002.png" /></p>
 <h2 id="visit0000png">visit0000.png</h2>
@@ -409,7 +425,7 @@
         <a href="../case.prm" class="btn btn-neutral float-right" title="Parameters">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../.." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../isotherm_simple_box/case.prm" class="btn btn-neutral" title="Parameters"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -435,7 +451,7 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../isotherm_simple_box/case.prm" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../case.prm" style="color: #fcfcfc">Next &raquo;</a></span>
