@@ -19,7 +19,7 @@
   <script>
     // Current page data
     var mkdocs_page_name = "Summary";
-    var mkdocs_page_input_path = "convection_boxSt/summary.md";
+    var mkdocs_page_input_path = "isolines_simple_box/summary.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -153,22 +153,10 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">convection_boxSt</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Summary</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#the-case-is-configured-with">The case is configured with:</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#the-case-is-tested-with">The case is tested with:</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#the-case-is-genearated-with-extra-settings">The case is genearated with extra settings:</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../convection_boxSt/summary/">Summary</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../case.prm">Parameters</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../convection_boxSt/case.prm">Parameters</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">convection_box_St_test</span></p>
@@ -357,10 +345,22 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">isolines_simple_box</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../isolines_simple_box/summary/">Summary</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Summary</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#the-case-is-configured-with">The case is configured with:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-case-is-tested-with">The case is tested with:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-case-is-genearated-with-extra-settings">The case is genearated with extra settings:</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../isolines_simple_box/case.prm">Parameters</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../case.prm">Parameters</a>
                     </li>
                 </ul>
       </div>
@@ -384,7 +384,7 @@
     
       
         
-          <li>convection_boxSt &raquo;</li>
+          <li>isolines_simple_box &raquo;</li>
         
       
     
@@ -399,33 +399,26 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="case-convection_boxst">Case convection_boxSt</h1>
+                <h1 id="case-isolines_simple_box">Case isolines_simple_box</h1>
 <h2 id="overview">Overview</h2>
 <h3 id="the-case-is-configured-with">The case is configured with:</h3>
-<p>strategy: temperature</p>
 <h3 id="the-case-is-tested-with">The case is tested with:</h3>
 <h3 id="the-case-is-genearated-with-extra-settings">The case is genearated with extra settings:</h3>
-<h1 id="test-stragety-temperature-in-mesh-refinement">test stragety = temperature in mesh refinement</h1>
-<pre><code>subsection Mesh refinement
-    set Initial global refinement = 3
-    set Initial adaptive refinement = 2
-    set Time steps between mesh refinement = 10
-    set Refinement fraction = 1.0
-    set Coarsening fraction = 0.0
-    set Strategy = temperature
-end
+<h1 id="documented-for-the-issue-poped-up-when-doing-the-isolines-plugin">documented for the issue poped up when doing the isolines plugin</h1>
+<p>turns out to be crucial to the performance and an issue is induced when we dealii it another way:</p>
+<pre><code>if (coarsen == true &amp;&amp; refine == true)
+{
+    coarsen = false;
+    clear_refine = false;
+
+}
 </code></pre>
-<h2 id="this-case-goes-to-refinement-level-to-5-and-doesnt-change-afterwards">This case goes to refinement level to 5 and doesn't change afterwards.</h2>
-<p>In the code, the 'maximum_refinememt_level' is set to the sum of 'Initial global refinement' and 'Initial adaptive refinement' so that we cannot refine to a higher level even in a later time step.</p>
+<p>Compare two images in the img folder. The one that is finer actually has a less lever in the setting of isolines.</p>
 <h1 id="plots">Plots</h1>
-<h2 id="statisticspng">Statistics.png</h2>
-<p><img alt="Statistics.png" src="../img/Statistics.png" /></p>
-<h2 id="depthaverage_t000000000e00png">DepthAverage_t0.00000000e+00.png</h2>
-<p><img alt="DepthAverage_t0.00000000e+00.png" src="../img/DepthAverage_t0.00000000e%2B00.png" /></p>
-<h2 id="visit0001png">visit0001.png</h2>
-<p><img alt="visit0001.png" src="../img/visit0001.png" /></p>
-<h2 id="visit0000png">visit0000.png</h2>
-<p><img alt="visit0000.png" src="../img/visit0000.png" /></p>
+<h2 id="visit_mm_0png">visit_mm_0.png</h2>
+<p><img alt="visit_mm_0.png" src="../img/visit_mm_0.png" /></p>
+<h2 id="visit_mm_2png">visit_mm_2.png</h2>
+<p><img alt="visit_mm_2.png" src="../img/visit_mm_2.png" /></p>
               
             </div>
           </div>
@@ -436,7 +429,7 @@ end
         <a href="../case.prm" class="btn btn-neutral float-right" title="Parameters">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../convection_boxMRFB5/case.prm" class="btn btn-neutral" title="Parameters"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../visco_plastic_phases_viscosity/case.prm" class="btn btn-neutral" title="Parameters"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -462,7 +455,7 @@ end
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../convection_boxMRFB5/case.prm" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../visco_plastic_phases_viscosity/case.prm" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../case.prm" style="color: #fcfcfc">Next &raquo;</a></span>
